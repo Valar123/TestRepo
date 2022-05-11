@@ -28,8 +28,10 @@ for i in data:
             min_values_per_position[position[index]] = j
             average_values_per_position[position[index]] = j
         else:
-            max_values_per_position[position[index]] = j if max_values_per_position.get(position[index]) < j else max_values_per_position.get(position[index])
-            min_values_per_position[position[index]] = j if min_values_per_position.get(position[index]) > j else min_values_per_position.get(position[index])
+            max_values_per_position[position[index]] = (j if max_values_per_position.get(position[index]) < j 
+                                                            else max_values_per_position.get(position[index]))
+            min_values_per_position[position[index]] = (j if min_values_per_position.get(position[index]) > j 
+                                                            else min_values_per_position.get(position[index]))
             average_values_per_position[position[index]] = (average_values_per_position.get(position[index]) + j)
     
     mean =  ({position[index]:(average_values_per_position.get(key)/len(data)) 
