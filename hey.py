@@ -36,5 +36,11 @@ for i in data:
                                     for index, key in enumerate(average_values_per_position)})
 
 print(max_values_per_position)
+# {'34': 89, '56': 50, '78': 29}
+# for position (34) we have max value 89, for 5&6 position we have max value 50 ....
 print(min_values_per_position)
+# {'34': 88, '56': 8, '78': 1}
+## for position 3&4 we have min value 88 ............
 print(mean)
+# {'34': 88.5, '56': 26.25, '78': 15.75}
+
