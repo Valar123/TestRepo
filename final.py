@@ -59,9 +59,18 @@ def get_min_max_mean_of_hex(filename, from_rows=1, to_rows=1000, shift=False):
     return {"max": max_values_per_position, "min": min_values_per_position, "average": mean}
 
 
+print(get_min_max_mean_of_hex("file1.csv", 1, 5, True))
+print(get_min_max_mean_of_hex("file1.csv", 6, 10, False))
+print(get_min_max_mean_of_hex("file1.csv", 11, 15, False))
+print(get_min_max_mean_of_hex("file1.csv", 16, 20, False))
+print(get_min_max_mean_of_hex("file1.csv", 21, 25, False))
+'''
+#output
+{'max': {'a': 89, 'b': 55, 'c': 27}, 'min': {'a': 87, 'b': 8, 'c': 1}, 'average': {'a': 73.33, 'b': 24.67, 'c': 14.33}}
+{'max': {'a': 89, 'b': 35, 'c': 47}, 'min': {'a': 88, 'b': 10, 'c': 12}, 'average': {'a': 73.5, 'b': 16.33, 'c': 24.33}}
+{'max': {'a': 89, 'b': 22, 'c': 56}, 'min': {'a': 87, 'b': 8, 'c': 9}, 'average': {'a': 73.33, 'b': 12.0, 'c': 28.5}}
+{'max': {'a': 88, 'b': 57, 'c': 57}, 'min': {'a': 88, 'b': 6, 'c': 7}, 'average': {'a': 73.33, 'b': 31.0, 'c': 29.17}}
+{'max': {'a': 89, 'b': 51, 'c': 45}, 'min': {'a': 87, 'b': 8, 'c': 0}, 'average': {'a': 73.67, 'b': 22.17, 'c': 21.83}}
+'''
 print(get_min_max_mean_of_hex("file1.csv"))
-# print(get_min_max_mean_of_hex("file1.csv", 1, 5, True))
-# print(get_min_max_mean_of_hex("file1.csv", 6, 10, False))
-# print(get_min_max_mean_of_hex("file1.csv", 11, 15, False))
-# print(get_min_max_mean_of_hex("file1.csv", 16, 20, False))
-# print(get_min_max_mean_of_hex("file1.csv", 21, 25, False))
+# {'max': {'a': 89, 'b': 57, 'c': 57}, 'min': {'a': 87, 'b': 6, 'c': 0}, 'average': {'a': 382.0, 'b': 111.33, 'c': 119.83}}
