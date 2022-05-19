@@ -74,3 +74,21 @@ print(get_min_max_mean_of_hex("file1.csv", 21, 25, False))
 '''
 print(get_min_max_mean_of_hex("file1.csv"))
 # {'max': {'a': 89, 'b': 57, 'c': 57}, 'min': {'a': 87, 'b': 6, 'c': 0}, 'average': {'a': 382.0, 'b': 111.33, 'c': 119.83}}
+
+
+# date is getting different for different position
+from_index = 2
+to_index = -2
+def get_date_time(filename, from_rows=0, to_rows=1000):
+    def convert(x):
+        return datetime.utcfromtimestamp(eval("0x" + x[from_index:to_index]))
+
+    with open(filename) as file:
+        for line in islice(file, from_rows, to_rows+1):
+            data = (line.strip())
+
+            data = data[data.rfind('-')+2:][:12]
+            print(convert(data))
+
+
+get_date_time("file1.csv")
