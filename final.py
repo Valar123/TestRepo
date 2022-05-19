@@ -92,3 +92,23 @@ def get_date_time(filename, from_rows=0, to_rows=1000):
 
 
 get_date_time("file1.csv")
+
+
+# getting lat and long
+shift = False
+from_index = 4
+to_index = 9
+with open('file1.csv') as file:
+    for line in islice(file, 0, 6):
+        data = line.strip()
+        if shift:
+            lat_hex = data[1:][3:9]
+            long_hex = data[1:][14:20]
+        else:
+            lat_hex = ('0'+data)[5:11]
+            long_hex = ('0'+data)[16:22]
+
+        lat_hex = int(lat_hex, 16)/1e5
+        long_hex = int(long_hex, 16)/1e5
+
+        print(lat_hex, long_hex)
